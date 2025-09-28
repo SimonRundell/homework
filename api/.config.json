@@ -1,0 +1,14 @@
+{
+    "servername": "localhost",
+    "port": 3306,
+    "username": "developer",
+    "password": "f3oHCjb7",
+    "dbname": "homework",
+    "api": "http://localhost",
+    "smtpServer": "smtp.dreamhost.com",
+    "smtpPort": 465,
+    "smtpUser": "server@exeter-itdd.com",
+    "smtpPass": "EnPc&rQB9Quwzt4t",
+    "smtpFrom": "Homework Tracker Server",
+    "smtpFromEmail": "server@exeter-itdd.com"
+}

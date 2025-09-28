@@ -1,0 +1,1487 @@
+/* CSS for Homewwork Tracker
+
+*/
+
+
+html, body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: calc(10px + 1vmin);
+  color: #ffffff;
+  background-color: #000000;
+  height: 100%;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+
+/* debug window */
+.debug-window {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-size: 10px;
+  top: 0;
+  width: 100%;
+  gap: 10px;
+  background-color: #ec6b6b;
+  color: white;
+  border: 1px solid #ccc;
+  padding: 5px;
+  margin: 10px;
+  overflow-y: auto;
+}
+
+/* ====================================================
+   BLUR EFFECT
+   ==================================================== */
+
+   @keyframes blurEffect {
+    from {
+      filter: blur(16px);
+    }
+    to {
+      filter: blur(0px); 
+    }
+  }
+
+  .blur {
+    animation: blurEffect 0.5s ease-in forwards;
+    -webkit-animation: blurEffect 0.5s ease-in forwards;
+}
+
+.no-select {
+  -webkit-user-select: none; 
+  -moz-user-select: none;   
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+/* Main content should take up all available space */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; 
+  align-items: left;
+  margin: 20px;
+  width: 100vw;
+}
+
+/* ====================================================
+   CONTAINERS
+   ==================================================== */
+
+  .course-details {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-bottom: 20px;
+    margin-top: 50px;
+  }
+
+  .course-details-column {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Full viewport height */
+    width: 100vw;  /* Full viewport width */
+    gap: 20px;
+  }
+
+    .centred-container {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    padding: 20px;
+    margin-top: 50px;
+  }
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  width: 300px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.login-form {
+  background-color: #1a1a1a;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  border: 1px solid #333;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #e0e0e0;
+  font-size: 14px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #444;
+  border-radius: 8px;
+  background-color: #2a2a2a;
+  color: #ffffff;
+  font-size: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #646cff;
+  box-shadow: 0 0 0 3px rgba(100, 108, 255, 0.1);
+}
+
+.form-group input::placeholder {
+  color: #888;
+}
+
+.form-group-button {
+  margin-top: 25px;
+  text-align: center;
+}
+
+
+
+.spinner-text {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.small {
+  font-size: 12px;
+  color: #888;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.answer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 70%;
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+}
+
+.userDetails {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 16px;
+  color: #6f6f74;
+  user-select: none;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.userDetails .button-row {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.userDetails button {
+  margin-top: 0;
+  width: auto;
+  padding: 6px 12px;
+  font-size: 12px;
+}
+
+/* ====================================================
+   LOGO
+   ==================================================== */
+
+.logo {
+  height: 3em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+
+}
+
+.logo-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.appStrap {
+  position: absolute;
+  top: 20px;
+  left: 600px;
+  font-size: 48px;
+  font-weight: bold;
+  color: #6f6f74;
+  user-select: none; 
+}
+
+/* ====================================================
+   CUSTOM USER INTERFACE AND TWEAKS
+   ==================================================== */
+
+   .central-overlay-spinner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .central-overlay-spinner .spinner-content {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+
+.tick {
+  width: 20px;
+}
+
+.fiftypercent {
+  width: 50%;
+}
+
+.short {
+  min-height: 10vh;
+}
+
+.small-grey {
+  color: #757373;
+  font-size:xx-small;
+}
+
+.green-bg {
+  background-color: green;
+  color: white;
+}
+
+.amber-bg {
+  background-color: orange;
+  color: white;
+}
+
+.red-bg {
+  background-color: red;
+  color: white;
+}
+
+.no-bg {
+  background-color: none;
+  color: white;
+}
+
+.different-class {
+  text-align: left;
+  border-top: 1px solid #ccc;
+}
+
+.no-border{
+  border: none;
+}
+
+.spaced {
+  gap: 20px;
+}
+
+.topgap {
+  padding-top: 10px;
+}
+
+.small-gap {
+  position:relative;
+  top: -30px;
+}
+
+.top {
+  margin-top: 10px;
+}
+
+.left-gap {
+  margin-left: 50px;
+}
+
+.password-reminder {
+  position: relative;
+  font-size: 12px;
+  color: #ccc;
+  top: -15px;
+}
+
+.lighter {
+  font-weight: 300;
+  font-size: smaller;
+}
+
+.light {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #ccc; 
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.light.red {
+  background-color: red;
+}
+
+.light.amber {
+  background-color: orange;
+}
+
+.light.green {
+  background-color: green;
+}
+
+.light.dim {
+  background-color: #ccc; 
+}
+
+.request-repeat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 18px;
+}
+
+
+.large {
+  font-size: 32px;
+  width: 100%;
+}
+
+.redText {
+  color: red;
+}
+
+.greenText {
+  color: green;
+}
+
+.whiteText {
+  color: white;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.blackText {
+  color: black;
+}
+
+
+
+/* ====================================================
+   CORE UI ELEMENTS AND MODIFICATIONS
+   ==================================================== */
+
+   button {
+    background-color: #282c34;
+    color: white; 
+    border: 1px solid #ccc; 
+    padding: 10px 20px; 
+    border-radius: 8px; 
+    cursor: pointer; 
+    font-size: 16px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+    transition: all 0.2s ease; 
+    width: 100%; 
+  }
+
+  .medium-button {
+    padding: 8px 16px;
+    font-size: 18px;
+    width: 150px;
+    height: 60px;
+  }
+
+button:hover {
+  background-color: #c2c2c2; 
+  color: black; 
+
+}
+
+button:focus {
+  outline: none;
+  border-color: #a9a9a9; 
+}
+
+.button-midsize {
+  margin: 10px; 
+  width: 100px;
+}
+
+.button-largesize {
+  margin: 10px; 
+  width: 300px;
+}
+
+.button-name-text {
+  font-size: 20px;
+  color: #999999;
+}
+
+.button-subject-text {
+  font-size: 16px;
+  font-weight: bold;
+  font-style: italic;
+  color: #fbff2c;
+}
+
+label {
+  margin-bottom: 0.5rem;
+}
+
+label {
+  margin-top: 0.5rem;
+  font-weight: bold;
+  color: #fff; 
+}
+
+input {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  field-sizing: content;
+  -webkit-border-radius:4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+
+textarea {
+  /* width: 100%;
+  height: 100px; */
+  field-sizing: content;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+
+select {
+  background-color: #282c34;
+  color: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+
+.sort-dropdown {
+  width: 50%;
+}
+
+select.inverse {
+  background-color: white;
+  color: #282c34;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+
+select:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+option {
+  background-color: #282c34;
+  color: white;
+}
+
+option.inverse {
+  background-color: white;
+  color: #282c34;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+div {
+  text-wrap: pretty;
+}
+
+/* ====================================================
+   LOGIN
+   ==================================================== */
+
+.login-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.login-label {
+  font-weight: 200;
+  color: #bdbdbd;
+  font-size: 14px;
+  margin: 0;
+}
+
+/* ====================================================
+   SUBJECT SELECTION
+   ==================================================== */
+
+.subject-tree-heading {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.subject-tree {
+  margin-top:40px;
+  padding: 20px;
+  width: 600px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+}
+
+.add-stump-container {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-top: 20px;
+  padding: 12px;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+
+.add-stump-container button {
+  width: 100px;
+}
+
+.parental-selection {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 20px;
+  padding: 12px;
+}
+
+.parental-selection > div {
+  width: 100%;
+  min-height: 30px;
+} 
+
+.data-input {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.data-input button {
+  width: 200px;
+  height: 40px;
+}
+
+.question-input {
+  width: 70%;
+}
+
+.big-question-input  {
+  width: 60%;
+  resize: vertical;
+}
+
+/* ====================================================
+   EDIT QUESTION
+   ==================================================== */
+
+.edit-question-cancel {
+  width: 100px;
+}
+
+/* ====================================================
+   RESPONSES
+   ==================================================== */
+
+.response-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  /* border: 1px solid #ccc; */
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+}
+
+.response-image-container {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.response-image {
+  width: 45%;
+  border: 1px solid #ccc;
+   border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+}
+
+.response-heading {
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #282c34;
+  padding: 10px;
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+}
+
+.student-response {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.student-response button {
+  height: 60px;
+}
+
+.ai-feedback-container {
+  padding: 20px;
+}
+
+.response-next-steps {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-left: 20px;
+  width: 50%;
+  gap: 10px;
+  font-size: 18px;
+}
+
+/* ====================================================
+   MARKING
+   ==================================================== */
+
+.marking-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  gap: 12px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+}
+
+/* Marking list rows and details */
+.marking-row {
+  margin-bottom: 10px;
+}
+
+.marking-header {
+  padding: 10px 12px;
+  border: 1px solid #444;
+  border-radius: 8px;
+}
+
+.marking-panel {
+  margin-top: 8px;
+}
+
+.column-spaced-small {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.prewrap {
+  white-space: pre-wrap;
+}
+
+.mt-6 {
+  margin-top: 6px;
+}
+/* ====================================================
+   LIGHTBOX AND IMAGE UPLOAD
+   ==================================================== */
+
+.image-upload-container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.image-upload-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 200px;
+}
+
+.upload-button {
+  width: 100%;
+  background-color: #282c34;
+}
+
+.image-thumbnail {
+  width: 150px;
+  height: 150px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.image-thumbnail:hover {
+  transform: scale(1.05);
+}
+
+.image-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-size {
+  font-size: 12px;
+  color: #ccc;
+  text-align: center;
+  margin-top: 4px;
+}
+
+.lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.lightbox-content {
+  max-width: 90%;
+  max-height: 90vh;
+}
+
+.lightbox-content img {
+  max-width: 100%;
+  max-height: 90vh;
+  object-fit: contain;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  color: white;
+  font-size: 48px;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.5);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.2s;
+}
+
+.lightbox-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+
+/* ====================================================
+   EXISTING ITEMS LIST
+   ==================================================== */
+
+.items-list-container {
+    margin-top: 10px;
+    border: 1px solid #444;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: rgba(40, 44, 52, 0.5);
+}
+
+.items-list-container strong {
+    color: #ccc;
+    font-size: 0.8em;
+    display: block;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #444;
+    padding-bottom: 4px;
+}
+
+.items-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 200px;
+    overflow-y: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.items-list li {
+    background-color: #282c34;
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 0.6em;
+    color: #fff;
+    border: 1px solid #444;
+    transition: all 0.2s ease;
+}
+
+.items-list li:hover {
+    background-color: #363b47;
+    border-color: #666;
+}
+
+/* ====================================================
+   MENU ITEMS
+   ==================================================== */
+
+   .menubar {
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-start;
+    gap: 12px;
+  }
+
+/* ====================================================
+   Ant Design overrides (TreeSelect dropdown visibility)
+   Ensure labels render in black on the white dropdown
+   ==================================================== */
+
+/* Dropdown container defaults */
+.ant-select-dropdown,
+.ant-tree-select-dropdown {
+  color: rgba(0, 0, 0, 0.88);
+  background-color: #fff;
+}
+
+/* Tree node text */
+.ant-select-dropdown .ant-select-tree-title,
+.ant-select-dropdown .ant-select-tree-node-content-wrapper {
+  color: rgba(0, 0, 0, 0.88);
+}
+
+/* Ensure the selector (input area) shows readable text as well */
+.answer-container .ant-select-selector,
+.subject-tree .ant-select-selector {
+  color: rgba(0, 0, 0, 0.88);
+  background-color: #fff;
+}
+
+/* Prevent global input field-sizing from collapsing AntD selectors */
+.ant-select .ant-select-selection-search-input,
+.ant-tree-select .ant-select-selection-search-input,
+.ant-select-selector input,
+.ant-tree-select .ant-select-selector input {
+  field-sizing: fixed; /* override global input { field-sizing: content } */
+  width: 100% !important;
+}
+
+/* Keep the control itself from shrinking */
+.answer-container .ant-select,
+.subject-tree .ant-select {
+  width: 100%;
+  max-width: 800px; /* aesthetic width similar to edit panel */
+  min-width: 320px;
+}
+
+/* Unify width of TreeSelects across screens */
+.answer-container .tree-select-unified,
+.subject-tree .tree-select-unified {
+  width: 600px !important; /* identical width regardless of container */
+}
+
+.tree-select-unified .ant-select-selector {
+  width: 100% !important;
+}
+
+.ontop {
+  z-index: 1000; 
+}
+
+/* ====================================================
+   HOMEWORK
+   ==================================================== */
+
+.hwdescription {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #444;
+  border-radius: 8px;
+  background-color: #2a2a2a;
+  color: #ffffff;
+  font-size: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+/* ====================================================
+   HOMEWORK STATUS
+   ==================================================== */
+
+.homework-status {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.homework-status.completed {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.homework-status.pending {
+  background-color: #f44336;
+  color: white;
+}
+
+/* ====================================================
+   DIV TABLES
+   ==================================================== */
+
+.table-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  gap: 12px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+  overflow-x: auto;
+}
+
+.table-header {
+  border: 1px solid #444;
+  border-radius: 8px;
+  font-weight: bold;
+  background-color: rgba(40, 44, 52, 0.8);
+}
+
+.table-row {
+  display: flex;
+  gap: 0;
+  padding: 10px;
+  border-bottom: 1px solid #444;
+  align-items: center;
+}
+
+.table-row:hover {
+  background-color: rgba(100, 108, 255, 0.1);
+}
+
+.table-row.editing-row {
+  background-color: #e6f7ff;
+  color: #000000;
+}
+
+.table-cell {
+  padding: 10px 20px;
+}
+
+.table-cell.id {
+  flex: 0 0 50px;
+}
+
+.table-cell.course-name {
+  flex: 0 0 300px;
+}
+
+.table-cell.year {
+  flex: 0 0 80px;
+}
+
+.table-cell.level {
+  flex: 0 0 80px;
+}
+
+.table-cell.group {
+  flex: 0 0 80px;
+}
+
+.table-cell.taught-by {
+  flex: 0 0 120px;
+}
+
+.table-cell.homework-status {
+  flex: 0 0 150px;
+}
+
+.table-cell.date-set {
+  flex: 0 0 150px;
+}
+
+.table-cell.date-due {
+  flex: 0 0 150px;
+}
+
+.table-cell.status {
+  flex: 0 0 50px;
+  /* border: 1px solid #444; */
+}
+
+.table-cell.empty-state {
+  flex: 1;
+  text-align: center;
+  padding: 20px;
+}
+
+.sub-table {
+  border-top: 1px solid #444;
+  padding: 10px 20px;
+  margin-top: 10px;
+}
+
+.table-cell.student-name {
+  flex: 0 0 250px;
+  /* border: 1px solid #444; */
+}
+
+.table-cell.comment {
+  flex: 0 0 350px;
+}
+
+.table-cell.homework {
+  flex: 0 0 35px;
+  border: 1px solid #444;
+}
+
+.table-cell.action {
+  flex: 0 0 150px;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+/* ====================================================
+   HOMEWORK REPORT TABLE
+   ==================================================== */
+
+.homework-report-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #bbb7b7;
+}
+
+.homework-report-table th,
+.homework-report-table td {
+  border: 1px solid #ddd;
+  padding: 8px 8px;
+  text-align: left;
+}
+
+.homework-report-table td:first-child {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 150px;
+}
+
+.homework-report-table th {
+  background-color: #f5f5f5;
+  font-weight: bold;
+  color: #000000;
+}
+
+.homework-report-table tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+.homework-report-table tfoot {
+  border-top: 2px solid #bbb;
+}
+
+.homework-report-table .summary-row {
+  background-color: #e8f4fd;
+  font-weight: bold;
+}
+
+.homework-report-table .summary-cell {
+  text-align: center;
+  background-color: #e8f4fd;
+  color: #000000;
+}
+
+.homework-report-table .progress-cell {
+  text-align: center;
+  font-weight: bold;
+  background-color: #f0f8ff;
+}
+
+/* Progress color coding */
+.homework-report-table .progress-cell.progress-high {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.homework-report-table .progress-cell.progress-medium {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.homework-report-table .progress-cell.progress-low {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.homework-report-table td[data-status="X"] {
+  background-color: #ffcccc;
+  color: #000000;
+}
+
+.homework-report-table td[data-status="R"] {
+  background-color: #ffdd99;
+  color: #000000;
+}
+
+.homework-report-table td[data-status="C"] {
+  background-color: #ccffcc;
+  color: #000000;
+}
+
+/* ====================================================
+   MANAGE ACCOUNT DRAWER
+   ==================================================== */
+
+.manage-account-drawer .form-group label {
+  color: #000000;
+}
+
+.manage-account-drawer .form-group input {
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #ccc;
+}
+
+.manage-account-drawer .form-group input:focus {
+  border-color: #646cff;
+  box-shadow: 0 0 0 3px rgba(100, 108, 255, 0.1);
+}
+
+.manage-account-drawer .form-group small {
+  display: block;
+  color: #666;
+  font-size: 12px;
+  margin-top: 4px;
+  font-style: italic;
+}
+
+/* Avatar section styling */
+.avatar-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.avatar-preview {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ddd;
+}
+
+.avatar-input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* ====================================================
+   USER DETAILS HEADER
+   ==================================================== */
+
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+  border: 2px solid #ddd;
+  margin-right: 8px;
+  transition: border-color 0.2s ease;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.user-avatar:hover {
+  border-color: #646cff;
+}
+
+/* ====================================================
+   ADMIN PANEL STYLES
+   ==================================================== */
+
+.admin-button {
+  background-color: #282c34;
+  color: white;
+  border: 1px solid #ccc;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease;
+  margin-left: 10px;
+}
+
+.admin-button:hover {
+  background-color: #c2c2c2;
+  color: black;
+}
+
+.admin-menu {
+  padding: 20px 0;
+}
+
+.admin-menu h3 {
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.admin-option-button {
+  display: block;
+  width: 100%;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  background-color: #282c34;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #ffffff;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.admin-option-button:hover {
+  background-color: #c2c2c2;
+  color: black;
+}
+
+.admin-section {
+  padding: 20px 0;
+}
+
+.admin-section h3, .admin-section h4 {
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.admin-section .form-group label {
+  color: #000000;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.admin-section .form-group input,
+.admin-section .form-group select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #ffffff;
+  color: #000000;
+  font-size: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+}
+
+.admin-section .form-group input:focus,
+.admin-section .form-group select:focus {
+  outline: none;
+  border-color: #646cff;
+  box-shadow: 0 0 0 3px rgba(100, 108, 255, 0.1);
+}
+
+.admin-section .form-group input::placeholder {
+  color: #666;
+}
+
+.admin-section .form-group input[type="file"] {
+  padding: 4px;
+}
+
+.admin-section .radio-group {
+  display: flex;
+  gap: 15px;
+  margin-top: 5px;
+}
+
+.admin-section .radio-group label {
+  display: flex;
+  align-items: center;
+  font-weight: normal;
+  cursor: pointer;
+  color: #000000;
+}
+
+.admin-section .radio-group input[type="radio"] {
+  margin-right: 5px;
+}
+
+.admin-section .form-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.admin-section .bulk-upload-section {
+  margin-bottom: 30px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.admin-section .bulk-upload-section h4 {
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.admin-section .bulk-upload-section small {
+  display: block;
+  margin-top: 5px;
+  color: #666;
+  font-size: 12px;
+}
+
+.admin-section .individual-add-section {
+  padding-top: 20px;
+  border-top: 1px solid #ddd;
+}
+
+.admin-section .individual-add-section h4 {
+  margin-bottom: 15px;
+  color: #ffffff;
+}

@@ -1,0 +1,6 @@
+{
+    "appName": "Homework Tracker",
+    "strapline": "A CodeMonkey Production",
+    "credits": "Simon Rundell 2025 - All rights reserved",
+    "api": "http://localhost/api"
+}

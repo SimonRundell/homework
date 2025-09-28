@@ -7,9 +7,17 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+public/.config.json
+
+api/vendor
+api/composer.*
+api/server.log
+api/.config.json
+
 node_modules
 dist
 dist-ssr
+data
 *.local
 
 # Editor directories and files
@@ -22,3 +30,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+upload.ps1
+.env
+.env.local
+.env.*.local
+.env.test
+eslint.*

@@ -1,16 +1,31 @@
-# React + Vite
+# Project Documentation
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
+This project is designed to [briefly describe the main purpose or functionality of the project, e.g., manage user accounts, process data, etc.]. It provides a set of features and modules to facilitate [describe the main tasks or operations performed by the project].
 
-Currently, two official plugins are available:
+## Features
+- [Feature 1: Brief description]
+- [Feature 2: Brief description]
+- [Feature 3: Brief description]
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Structure
+- **src/**: Contains the main source code files.
+- **api/**: PHP Scripts
+- **docs/**: Project documentation and guides.
 
-## React Compiler
+## Getting Started
+1. Clone the repository.
+2. Install dependencies using your package manager.
+3. Run the application with the provided scripts.
 
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Usage
+Provide examples and instructions on how to use the main features of the project.
 
-## Expanding the ESLint configuration
+## Contributing
+Contributions are welcome! Please submit issues and pull requests following the project's guidelines.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## License
+This project is licensed under the MIT License.
+
+## Contact
+For questions or support, contact simon@rundell.org.uk
